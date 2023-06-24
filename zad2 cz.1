@@ -1,0 +1,36 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int n = 10; // Liczba liczb do wylosowania
+        int min = -8; // Dolny zakres losowania
+        int max = 8; // Górny zakres losowania
+        int losowanieLicznik = 0; // Licznik losowań
+
+        Random random = new Random();
+
+        Console.WriteLine("Wersja 1 - Sprawdzanie poprawności losowania po losowaniu:");
+
+        for (int i = 0; i < n; i++)
+        {
+            int liczba;
+
+            do
+            {
+                liczba = random.Next(min, max + 1);
+                losowanieLicznik++;
+            } while (liczba % 2 != 0);
+
+            Console.Write(liczba);
+
+            if (i < n - 1)
+            {
+                Console.Write(", ");
+            }
+        }
+
+        Console.WriteLine("\nLiczba losowań: " + losowanieLicznik);
+    }
+}
