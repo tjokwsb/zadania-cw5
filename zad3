@@ -1,0 +1,30 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Podaj wysokość trójkąta: ");
+        int wysokosc = int.Parse(Console.ReadLine());
+
+        int szerokosc = 2 * wysokosc - 1;
+
+        for (int i = 1; i <= wysokosc; i++)
+        {
+            int iloscPlusow = 2 * i - 1;
+            int iloscSpacji = (szerokosc - iloscPlusow) / 2;
+
+            for (int j = 0; j < iloscSpacji; j++)
+            {
+                Console.Write(" ");
+            }
+
+            for (int j = 0; j < iloscPlusow; j++)
+            {
+                Console.Write("+");
+            }
+
+            Console.WriteLine();
+        }
+    }
+}
